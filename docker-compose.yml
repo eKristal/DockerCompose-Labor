@@ -11,9 +11,9 @@ services:
     image: postgres:14-alpine
     container_name: todo_db
     environment:
-      POSTGRES_DB: tododb
-      POSTGRES_USER: todouser
-      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
